@@ -1,0 +1,20 @@
+
+
+<!--<router-outlet></router-outlet>-->
+
+
+<table border="2">
+    <tr>
+        <th (click)="sort('MobileId',order)">MobileId</th>
+        <th (click)="sort('MobileName',order)">MobileName</th>
+        <th (click)="sort('MobilePrice',order)">MobilePrice</th>
+        <th>ACTION</th>
+    </tr>
+    <tr *ngFor="let o of mobile | sideBy:'MobileName'">
+        <td>{{o.MobileId}}</td>
+        <td>{{o.MobileName}}</td>
+        <td>{{o.MobilePrice}}</td>
+        <td><button (click)="delete(o.MobileId)">delete</button></td>
+        <td></td>
+    </tr>
+</table>
